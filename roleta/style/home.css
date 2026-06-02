@@ -12,7 +12,7 @@ body {
 .page-wrapper {
     width: 420px;
     min-height: 100vh;
-    background: url('../images/backgorund.png') center top no-repeat;
+    background: url('./roleta/images/backgorund.png') center top no-repeat;
     background-size: cover;
     background-position: center top;
     display: flex;
@@ -71,7 +71,7 @@ body {
     bottom: 55px;
     width: 260px;
     height: 260px;
-    background: url('../images/history_bkg.svg') center top no-repeat;
+    background: url('./roleta/images/history_bkg.svg') center top no-repeat;
     background-size: cover;
     padding: 70px 13px 20px 13px;
 }
