@@ -242,7 +242,7 @@ window.addEventListener("dblclick", () => {
 
 // Historico
 document.getElementById("historySection").addEventListener("dblclick", () => {
-  window.location.href = "reset.html";
+  window.location.href = "https://browniedasorte.vercel.app/roleta/reset.html";
 });
 
 //*EXPONDO FUNCOES

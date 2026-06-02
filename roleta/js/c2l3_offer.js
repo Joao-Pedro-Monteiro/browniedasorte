@@ -21,7 +21,7 @@ function check_offer(){
         cancelBtn.classList.add('popup-btn');
         cancelBtn.innerHTML = 'Deixar para a próxima';
         cancelBtn.setAttribute('id', "resulPopupBtn-deny");
-        cancelBtn.setAttribute('onclick', "setTimeout(()=>{window.location.assign('/index.html')}, 500)");
+        cancelBtn.setAttribute('onclick', "setTimeout(()=>{window.location.assign('https://browniedasorte.vercel.app')}, 500)");
         cancelBtn.style.padding = 'auto';
         oKBtn.insertAdjacentElement('afterend', cancelBtn);
     } catch (error) {
@@ -37,7 +37,7 @@ async function register_acceptance() {
 
         if (history_lastChild.prizeCode !== 'C2L3') {
             console.log('[REGISTER_ACCEPTANCE] Não aplicável à oferta');
-            window.location.assign('../index.html');
+            window.location.assign('https://browniedasorte.vercel.app');
             return;
         }
 
@@ -55,14 +55,14 @@ async function register_acceptance() {
             throw new Error('[REGISTER_ACCEPTANCE] Erro ao atualizar o banco: ' + dbError.message, { cause: dbError });
         }
 
-        setTimeout(() => { window.location.assign('../index.html'); }, 500);
+        setTimeout(() => { window.location.assign('https://browniedasorte.vercel.app/'); }, 500);
 
     } catch (error) {
         console.error('[REGISTER_ACCEPTANCE] Process error:', error);
 
         setTimeout(() => {
             alert('Ocorreu um erro ao processar sua resposta. Por favor, tente novamente.');
-            window.location.assign('../index.html');
+            window.location.assign('https://browniedasorte.vercel.app/roleta');
         }, 500);
     }
 };
