@@ -1,6 +1,6 @@
-const backgroundMusicMP3 = new Audio("./js/music/Talk Show Tonight  Music for content creator.mp3");
-const wheelSoundMP3 = new Audio("./js/music/Spinning Wheel Sound Effect.mp3");
-const winSoundMP3 = new Audio("./js/music/Win.mp3");
+const backgroundMusicMP3 = new Audio("./roleta/js/music/Talk Show Tonight  Music for content creator.mp3");
+const wheelSoundMP3 = new Audio("./roleta/js/music/Spinning Wheel Sound Effect.mp3");
+const winSoundMP3 = new Audio("./roleta/js/music/Win.mp3");
 
 backgroundMusicMP3.volume = 0.5;
 backgroundMusicMP3.loop = true;
