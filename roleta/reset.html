@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Brownie da Sorte - Reset</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <style>
+        *{
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #a25435;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function localStorageReset(){
+            if (confirm("Tem certeza que deseja limpar todo o armazenamento? Esta ação não pode ser desfeita.")) {
+                localStorage.clear();
+                alert("Armazenamento limpo com sucesso!");
+                window.location.href = "index.html"; // Redireciona para a página inicial após o reset
+            }
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="localStorageReset()"> Limpar TODO o armazenamento</button>
+    <p>Clique no botão acima se deseja limpar todo o armazenamento da roleta.<br>Isto inclui histórico.</p>
+</body>
+</html>
+

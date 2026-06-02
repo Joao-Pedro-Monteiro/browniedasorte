@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brownie da Sorte</title>
+  <link href="./style/verify.css" type="text/css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./roleta/images/favicon.png">
+  <script src="./script/code.js" defer></script>
+  <script src="./db/config.js" defer></script>
+  <script src="./db/crudapi.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Logo -->
+  <div class="logo">
+    <div class="logo-badge">
+      <img src="images/icons/brandMark.png">
+    </div>
+    <div class="logo-name">Sortudo é quem come</div>
+    <!-- <div class="logo-tagline">Adicione uma tagline aqui</div> -->
+  </div>
+
+  <!-- Steps indicator -->
+  <div class="steps">
+    <div class="step-wrap">
+      <div class="step-circle active" id="dot1">1</div>
+      <span class="step-lbl active" id="lbl1">Código</span>
+    </div>
+    <div class="step-line" id="line1"></div>
+    <div class="step-wrap">
+      <div class="step-circle" id="dot2">2</div>
+      <span class="step-lbl" id="lbl2">Cadastro</span>
+    </div>
+    <div class="step-line" id="line2"></div>
+    <div class="step-wrap">
+      <div class="step-circle" id="dot3">3</div>
+      <span class="step-lbl" id="lbl3">Roleta</span>
+    </div>
+  </div>
+
+  <!-- ────────────────────────────────────────────
+       TELA 1 — VALIDAÇÃO DO CÓDIGO
+  ──────────────────────────────────────────── -->
+  <div class="screen active" id="screen1">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Insira seu código</div>
+        <div class="card-desc">Digite o código impresso na embalagem do seu Brownie da Sorte.</div>
+      </div>
+
+      <div class="field">
+        <label for="codeInput">Código do brownie</label>
+        <input type="text" id="codeInput" placeholder="EX: LUCKY01" maxlength="12"
+               autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="characters" />
+      </div>
+
+      <div id="codeMsg"></div>
+
+      <button class="btn" id="btnValidate" onclick="validateCode()">
+        <span class="btn-label">Verificar código</span>
+        <div class="spinner"></div>
+      </button>
+    </div>
+    <p class="hint">O código está na parte [PARTE] da embalagem.</p>
+  </div>
+
+  <!-- ────────────────────────────────────────────
+       TELA 2 — CADASTRO
+  ──────────────────────────────────────────── -->
+  <div class="screen" id="screen2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Seus dados</div>
+        <div class="card-desc">Preencha para confirmar sua participação. O registro é concluído após o giro da roleta.</div>
+      </div>
+
+      <div class="field">
+        <label for="inputNome">Nome completo</label>
+        <input type="text" id="inputNome" placeholder="Ex: Maria Silva" autocomplete="name" />
+      </div>
+
+      <div class="field">
+        <label for="inputCPF">CPF</label>
+        <input type="text" id="inputCPF" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" />
+      </div>
+
+      <div class="field">
+        <label for="inputTel">Telefone</label>
+        <input type="text" id="inputTel" placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric" />
+      </div>
+
+      <div id="regMsg"></div>
+
+      <button class="btn" id="btnRegister" onclick="submitRegistration()">
+        <span class="btn-label">Girar a roleta →</span>
+        <div class="spinner"></div>
+      </button>
+    </div>
+    <p class="hint">Código validado: <strong id="codeDisplay">—</strong></p>
+  </div>
+
+  <!-- ────────────────────────────────────────────
+       TELA 3 — REDIRECIONANDO PARA ROLETA
+  ──────────────────────────────────────────── -->
+  <div class="screen" id="screen3">
+    <div class="card roulette-card">
+      <div class="roulette-anim">
+        <img src="images/icons/roulette_icon.svg" alt="Girando a roleta">
+      </div>
+      <div class="card-title">Tudo pronto!</div>
+      <div class="card-desc" style="margin-top: 8px;">
+        Seus dados foram salvos. Redirecionando para a roleta da sorte…<br><br>
+        <small style="opacity:.7; font-size:13px;">O registro completo será feito logo após o giro.</small>
+      </div>
+      <div class="progress-bar-wrap" style="margin-top: 28px;">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

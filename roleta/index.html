@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+  <title>Brownie da Sorte</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+  <link href="./images/Roleta.svg" rel="preload" as="image">
+  <link href="./images/history_bkg.svg" rel="preload" as="image"1>
+  <link href="./style/home.css" type="text/css" rel="stylesheet">
+  <script src="../db/config.js"></script>
+  <script src="../db/crudapi.js"></script>
+  <script src="./js/prize.js" defer></script>
+  <script src="./js/script.js" defer></script>
+  <script src="./js/history.js" defer></script>
+  <script src="./js/c2l3_offer.js" defer></script>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="wheel-section">
+    <div class="wheel-container">
+      <div class="wheel-pointer">
+        <img src="./images/seta.svg" alt="Ponteiro da Roleta">
+      </div>
+      <img id="wheel" class="wheel-img" src="./images/Roleta.svg" alt="Roleta" onclick="spinWheel()">
+    </div>
+  </div>
+  <div id="historySection"> 
+    <ul id="historySection_list">
+    </ul>
+  </div>
+</div>
+
+  <img src="./images/mascote.svg" id="bolinho" alt="">
+
+<div class="overlay" id="overlay">
+  <div class="popup" id="resultPopup">
+    <h2>Parabéns! <span id="resultUsername"></span></h2>
+    <p style="color:#f5e6c8;font-family:'Nunito',sans-serif;font-weight:700;margin-bottom:4px;">Voce ganhou:</p>
+    <div class="prize-label" id="prizeText"></div>
+    <button class="popup-btn" id="resulPopupBtn-ok" onclick="document.location.assign('../index.html')">Otimo!</button>
+  </div>
+</div>
+</body>
+</html>
+<script>
+  try{
+    JSON.parse(sessionStorage.getItem('brownie_participant')).nome;
+  }
+  catch(e){
+    sessionStorage.removeItem('brownie_participant');
+    window.location.assign('../index.html');
+  };
+</script>
